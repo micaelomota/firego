@@ -23,6 +23,26 @@ go get github.com/micaelomota/firego
 
 3. Once the installation is complete, you can start using FireGo by running the `firego` command in your terminal.
 
+### Authentication
+
+By default this tool will use your application default credentials to authenticate you into Firestore (`$HOME/.config/gcloud/application_default_credentials.json`). To ensure that the credentials file exists, please run `gcloud auth application-default login`.
+
+In addition, it is expected that the `GOOGLE_CLOUD_PROJECT` environment variable is set, as this is what Firebase will use to determine against which project your Firestore operations should run, you can add this to your Environment favorite shell by running:
+
+#### Zsh
+
+```bash
+echo 'GOOGLE_CLOUD_PROJECT=<your_project_id>' >> ~/.zshrc
+exec zsh
+```
+
+#### Bash
+
+```bash
+echo 'GOOGLE_CLOUD_PROJECT=<your_project_id>' >> ~/.bashrc
+exec bash
+```
+
 ## Usage
 
 To use FireGo, execute the following command:
